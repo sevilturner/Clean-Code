@@ -49,8 +49,9 @@ var missingArrivalTimes = tripDays
 2.	Class, variable, and field names should be nouns. Method names should be verbs or verb/object pairs
 
 3.	Do not use Abbreviations or Acronyms as part of a name. Use names that are easy to pronounce. 
+
+Correct
 ```cs
-// Correct
 ProductCategory productCategory;
  ```
 Avoid
@@ -126,7 +127,7 @@ Customer c = Array.Find(customers, delegate(Customer c)
   return c.Name == "John";
 }
 ```
-Do this, much more readable
+Do this, this is much more readable
 ```cs
 var customer = customers.Where(c => c.Name == "John");
 ```
@@ -136,4 +137,41 @@ var customer = customers.Where(c => c.Name == "John");
 
 11. Be caferul with multiple return statements. One entry, one exit is a sound principle and keeps the control flow readable. However, if the method is very small then multiple return statements may actually improve readibility over some central boolean flag that is updated at various points.
 
+```cs
+//avoid
+if(product.Price>15)
+{
+   return false;
+}
+else if(product.IsDeleted)
+{
+   return false;
+}
+else if(!product.IsFeatured)
+{
+   return false;
+}
+else if()
+{
+   //.....
+}
+return true;
+```
+```cs
+//DO
+var isValid = true;
+if(product.Price>15)
+{
+   isValid= false;
+}
+else if(product.IsDeleted)
+{
+   isValid= false;
+}
+else if(!product.IsFeatured)
+{
+   isValid= false;
+}
+return isValid;
+```
 12. Avoid Obsolete Comments
