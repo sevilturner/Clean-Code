@@ -85,16 +85,16 @@ A class should have one, and only one, reason to Keep Class Size Small. A class 
 
 **"The single responsibility principle states that every object should have a single responsibility, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.”**
 
-2. Open Closed Principle (OCP)  
+2. Open Closed Principle (OCP)    
 You should be able to extend a classes behaviour without modifying it.
 
-3.	METHODS SHOULD BE KEPT SMALL. 
+3.	METHODS SHOULD BE KEPT SMALL   
 They should do ONE thing and do it well. The more lines of code in a method the harder it is to understand. Everyone recommends 20-25 lines of code is good. If you need comments to understand the purpose of the method, it is a good place to start refactoring that method. 
 
-4. The stepdown rule: as much as possible.
+4. The stepdown rule: as much as possible  
 Order your method from top to bottom so that they read like a narrative and the code reader can easily follow the flow.
 
-5. Avoid method with too many parameters. 
+5. Avoid method with too many parameters   
 If you end up with a function with more than 3 parameters, use a structure or a class that puts all these parameters together. This is generally a better design and valuable abstraction. Additionally, unit testing a method with many parameters requires many scenarios to test.
 
 ```cs
@@ -110,9 +110,11 @@ function ChangeAddress(Address addressToChange)
 }
 ```
 
-6.	Don’t use magic numbers or strings – use constants or enumerations instead
+6.	Don’t use magic numbers or strings  
+Use constants or enumerations instead
 
-7.	Declare and initialize variable as late as possible. Define and initialize each variable at the point where it is needed.
+7.	Declare and initialize variable as late as possible   
+Define and initialize each variable at the point where it is needed.
 
 8.	Don’t make explicit comparisons to true or false
 ```cs
@@ -127,7 +129,7 @@ Do this
 while(condition)
 ```
 
-9.	Don’t change a loop variable inside a for or foreach loop. 
+9.	Don’t change a loop variable inside a for or foreach loop  
 Updating the loop variable within the loop body is generally considered confusing, even more so if the loop variable is modified in more than one place
 ```cs
 for(int index = 0; index < 10; ++index)
@@ -139,7 +141,7 @@ for(int index = 0; index < 10; ++index)
 }
 ```
 
-10.	Use Lambda expressions instead of delegates.
+10.	Use Lambda expressions instead of delegates  
 
 Don't do this
 ```cs
@@ -153,7 +155,7 @@ Do this, this is much more readable
 var customer = customers.Where(c => c.Name == "John");
 ```
 
-11. Be caferul with multiple return statements. 
+11. Be caferul with multiple return statements  
 One entry, one exit is a sound principle and keeps the control flow readable. However, if the method is very small then multiple return statements may actually improve readibility over some central boolean flag that is updated at various points.
 
 ```cs
@@ -193,23 +195,23 @@ else if(!product.IsFeatured)
 }
 return isValid;
 ```
-12. Avoid Obsolete Comments
+12. Avoid Obsolete Comments  
  *According to Robert C. Martin:*
 
 **"A comment that has gotten old, irrelevant, and incorrect is obsolete.  Comments get old quickly.  It is best not to write a comment that will become obsolete.  If you find an obsolete comment, it is best to update it or get rid of it as quickly as possible.  Obsolete comments tend to migrate away from the code they once described.  They become floating islands of irrelevance and misdirection in the code."**
 
 13. If a variable is declared but is not used anywhere, delete it.
 
-14. Needless Repetition
+14. Needless Repetition  
 
 Code contains lots of code duplication: exact code duplications or design duplicates (doing the same thing in a different way). Making a change to a duplicated piece of code is more expensive and more error-prone because the change has to be made in several places with the risk that one place is not changed accordingly.
 
-15. Needless Complexity 
+15. Needless Complexity   
 
 The design contains elements that are currently not useful. The added complexity makes the code harder to comprehend. Therefore, extending and changing the code results in higher effort than necessary.
 
-16. Keep it Simple, Stupid (KISS)
+16. Keep it Simple, Stupid (KISS)  
 Simpler is always better. Reduce complexity as much as possible.
 
-17. Boy Scout Rule 
+17. Boy Scout Rule   
 Leave the campground cleaner than you found it. If the code is complex, refactor it by simplifying the code.
