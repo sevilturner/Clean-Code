@@ -9,7 +9,6 @@ var postedActivityEmployees = postedActivity.ActivityEmployees.Select(item => ne
 2.	Do not use regions since they usually mean you are trying to hide a large chunck of code which is probably points to the need for refactoring
 
 3.	Remove Using statement that aren’t actually referenced in the file
-![alt text](http://url/to/img.png)
  
 3.	Do not indent object intializers and initialize each property on a new line:
 
@@ -109,5 +108,4 @@ var customer = customers.Where(c => c.Name == "John");
 
 10. Be caferul with multiple return statements. One entry, one exit is a sound principle and keeps the control flow readable. However, if the method is very small then multiple return statements may actually improve readibility over some central boolean flag that is updated at various points.
 
-11. 
 
