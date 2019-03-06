@@ -85,7 +85,7 @@ A class should have one, and only one, reason to Keep Class Size Small. A class 
 
 **"The single responsibility principle states that every object should have a single responsibility, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.”**
 
-2. Open Closed Principle (OCP)
+2. Open Closed Principle (OCP)  
 You should be able to extend a classes behaviour without modifying it.
 
 3.	METHODS SHOULD BE KEPT SMALL. 
