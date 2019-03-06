@@ -25,7 +25,7 @@ IEnumerable<Customer> customers = dbCustomers.Select(customer => new Customer
     Number = customer.Number
 }); 
 ```
-5.	Omit extra blank lines
+5.	Omit extra blank lines in a method
 
 6.	When using LINQ, seprate lines by LINQ function for easy readibility
 
@@ -53,7 +53,7 @@ var missingArrivalTimes = tripDays
 // Correct
 ProductCategory productCategory;
  ```
-// Avoid
+Avoid
 ```cs
 ProductCategory prodCat;
 ```
