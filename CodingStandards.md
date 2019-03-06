@@ -1,13 +1,16 @@
-# Clean Coding Standards
+# Clean Coding Standards  
  Most software defects are introduced when changing existing code. Clean code minimises the risk of introducing defects by making the code as easy to understand as possible
 
 ## Formatting and Style
 
-1.	Lines should be no longer than 120 charactes long to easy readability. Don't do this
+1.	Lines should be no longer than 120 charactes long to easy readability.   
+
+Don't do this
 ```cs
 var postedActivityEmployees = postedActivity.ActivityEmployees.Select(item => new EF.ActivityEmployee { ActivityID = activity.ID, ID = item.ID.Equals(Guid.Empty) ? Guid.NewGuid() : item.ID, Position = item.Position, Count = item.Count, AnnualSalary = item.AnnualSalary, TimeSpentPercentage = item.TimeSpentPercentage, EmployeeTypeID = item.EmployeeTypeID });
 ```
-2.	Avoid using Regions in class since they usually mean you are trying to hide a large chunck of code which is probably points to the need for refactoring
+2.	Avoid using Regions in class.  
+They usually mean you are trying to hide a large chunck of code which is probably points to the need for refactoring
 
 3.	Remove Using statement that aren’t actually referenced in the file and organize it by right clicking on namespace -> Remove and Sort Using
  
@@ -45,7 +48,7 @@ var missingArrivalTimes = tripDays
 
 ## 	Naming
 
-1.	Using meaningful names tha reveal the intention of the variable or method
+1.	Using meaningful names tha reveal the intention of the variable or method.
 
 2.	Class, variable, and field names should be nouns. Method names should be verbs or verb/object pairs
 ```cs
@@ -80,7 +83,7 @@ public interface IAddress
 
 ## 	Maintainability
 
-1. Single Responsibility Principle (SRP)
+1. Single Responsibility Principle (SRP)  
 A class should have one, and only one, reason to Keep Class Size Small. A class should have one, and only one, reason to change. If class tries to do many things, it violates the Single Responsibility Principle. *S in SOLID:*
 
 **"The single responsibility principle states that every object should have a single responsibility, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.”**
