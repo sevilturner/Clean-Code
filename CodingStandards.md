@@ -6,9 +6,9 @@
 ```cs
 var postedActivityEmployees = postedActivity.ActivityEmployees.Select(item => new EF.ActivityEmployee { ActivityID = activity.ID, ID = item.ID.Equals(Guid.Empty) ? Guid.NewGuid() : item.ID, Position = item.Position, Count = item.Count, AnnualSalary = item.AnnualSalary, TimeSpentPercentage = item.TimeSpentPercentage, EmployeeTypeID = item.EmployeeTypeID });
 ```
-2.	Do not use Regions in class since they usually mean you are trying to hide a large chunck of code which is probably points to the need for refactoring
+2.	Avoid using Regions in class since they usually mean you are trying to hide a large chunck of code which is probably points to the need for refactoring
 
-3.	Remove Using statement that aren’t actually referenced in the file
+3.	Remove Using statement that aren’t actually referenced in the file and organize it by right clicking on namespace -> Remove and Sort Using
  
 4.	Do not indent object intializers and initialize each property on a new line:
 
@@ -47,8 +47,19 @@ var missingArrivalTimes = tripDays
 1.	Using meaningful names tha reveal the intention of the variable or method
 
 2.	Class, variable, and field names should be nouns. Method names should be verbs or verb/object pairs
+```cs
+public class Employee
+{
+}
+public class BusinessLocation
+{
+}
+public class DocumentCollection
+{
+}
+```
 
-3.	Do not use Abbreviations or Acronyms as part of a name. Use names that are easy to pronounce. 
+3.	DO NOT use Abbreviations or Acronyms as part of a name. Use names that are easy to pronounce. 
 
 Correct
 ```cs
@@ -68,7 +79,7 @@ public interface IAddress
 
 ## 	Maintainability
 
-1.	Functions should be kept small. They should do ONE thing and do it well. The more lines of code in a method the harder it is to understand. Everyone recommends 20-25 lines of code is good.
+1.	METHODS SHOULD BE KEPT SMALL. They should do ONE thing and do it well. The more lines of code in a method the harder it is to understand. Everyone recommends 20-25 lines of code is good. If you need comments to understand the purpose of the method, it is a good place to start refactoring that method. 
 
 2. The stepdown rule: as much as possible, order your functions from top to bottom so that they read like a narrative and the code reader can easily follow the flow.
 
@@ -175,3 +186,5 @@ else if(!product.IsFeatured)
 return isValid;
 ```
 12. Avoid Obsolete Comments
+
+13. If a variable is declared but is not used anywhere, Delete it.
