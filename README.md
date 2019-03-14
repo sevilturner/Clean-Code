@@ -3,7 +3,7 @@
 
 ## Formatting and Style
 
-1.	Lines should be no longer than 120 charactes long for easy readability.    
+1.	Lines should be no longer than 120 charactes long for easy readability  
 
 Don't do this:
 ```cs
