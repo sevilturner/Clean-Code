@@ -1,5 +1,5 @@
 # Clean Coding Standards  
- Most software defects are introduced when changing existing code. Clean code minimises the risk of introducing defects by making the code as easy to understand as possible. 
+*Most software defects are introduced when changing existing code. Clean code minimises the risk of introducing defects by making the code as easy to understand as possible.*  
 
 ## Formatting and Style
 
@@ -9,10 +9,10 @@ Don't do this:
 ```
 var postedActivityEmployees = postedActivity.ActivityEmployees.Select(item => new EF.ActivityEmployee { ActivityID = activity.ID, ID = item.ID.Equals(Guid.Empty) ? Guid.NewGuid() : item.ID, Position = item.Position, Count = item.Count, AnnualSalary = item.AnnualSalary, TimeSpentPercentage = item.TimeSpentPercentage, EmployeeTypeID = item.EmployeeTypeID });
 ```
-2.	Avoid using Regions in class. 
+2.	Avoid using ```regions``` in class. 
 Regions usually mean you are trying to hide a large chunck of code which probably points to the need for refactoring. 
 
-3.	Remove Using statement that aren’t actually referenced in the file and organize it by right clicking on namespace -> Remove and Sort Using. 
+3.	Remove ```Using``` statement that aren’t actually referenced in the file and organize it by right clicking on namespace -> Remove and Sort Using. 
  
 4.	Do not indent object intializers and initialize each property on a new line: 
 
@@ -119,19 +119,19 @@ Use constants or enumerations instead.
 7.	Declare and initialize variable as late as possible.   
 Define and initialize each variable at the point where it is needed.
 
-8.	Don’t make explicit comparisons to true or false
+8.	Don’t make explicit comparisons to ```true``` or ```false```
 
 Wrong and bad style:
 ```
-while(condition == false) 
+while (condition == false) 
 ```
 Also wrong:
 ```
-while(condition != true)
+while (condition != true)
 ```
 Do this:
 ```
-while(condition)
+while (condition)
 ```
 
 9.	Don’t change a loop variable inside a ``` for``` or ``` foreach``` loop.    
@@ -155,32 +155,32 @@ Customer c = Array.Find(customers, delegate(Customer c)
   return c.Name == "John";
 }
 ```
-Do this. This is much more readable:
+Do this for easy readability:
 ```
 var customer = customers.Where(c => c.Name == "John");
 ```
 
-11. Be caferul with multiple return statements.  
+11. Be caferul with multiple ```return``` statements.  
 One entry, one exit is a sound principle and keeps the control flow readable. However, if the method is very small then multiple return statements may actually improve readibility over some central boolean flag that is updated at various points.
 
 Avoid this:
 ```
 if(product.Price>15)
-	{
-	   return false;
-	}
+{
+   return false;
+}
 else if(product.IsDeleted)
-	{
-	   return false;
-	}
+{
+   return false;
+}
 else if(!product.IsFeatured)
-	{
-	   return false;
-	}
+{
+   return false;
+}
 else if()
-	{
-	   //.....
-	}
+{
+   //.....
+}
 return true;
 ```
 DO this:
@@ -188,17 +188,17 @@ DO this:
 var isValid = true;
 
 if(product.Price>15)
-	{
-	   isValid= false;
-	}
+{
+   isValid= false;
+}
 else if(product.IsDeleted)
-	{
-	   isValid= false;
-	}
+{
+   isValid= false;
+}
 else if(!product.IsFeatured)
-	{
-	   isValid= false;
-	}
+{
+   isValid= false;
+}
 return isValid;
 ```
 12. Avoid Obsolete Comments.  
