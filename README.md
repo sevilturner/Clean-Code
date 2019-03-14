@@ -73,7 +73,11 @@ Avoid:
 ```cs
 ProductCategory prodCat;
 ```
-4. DO prefix interfaces with the letter ```cs I```:
+4. DO prefix interfaces with the letter 
+```cs
+I:
+```
+
 ```cs
 public interface IAddress
 {
