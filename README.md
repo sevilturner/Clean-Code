@@ -180,7 +180,8 @@ else if(!product.IsFeatured)
 else if()
 {
    //.....
-}
+} 
+
 return true;
 ```
 DO this:
@@ -198,7 +199,8 @@ else if(product.IsDeleted)
 else if(!product.IsFeatured)
 {
    isValid= false;
-}
+} 
+
 return isValid;
 ```
 12. Avoid Obsolete Comments.  
